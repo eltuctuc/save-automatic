@@ -28,8 +28,14 @@ export default {
     ...mapActions(['logout', 'checkAuthStatus']),
 
     handleLogout() {
-      this.logout()
-      this.$router.push('/login')
+      console.log('Logout button clicked'); // Debug log
+      // Direktes Logout und Navigation zur Logout-Seite
+      this.logout();
+      this.$router.push('/logout').then(() => {
+        console.log('Navigation to /logout successful');
+      }).catch(error => {
+        console.error('Navigation error:', error);
+      });
     }
   },
   created() {
