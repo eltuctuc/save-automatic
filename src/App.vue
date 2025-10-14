@@ -7,7 +7,7 @@
       <MaterialIcon name="info" size="small" /> About
     </router-link>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <style lang="scss">

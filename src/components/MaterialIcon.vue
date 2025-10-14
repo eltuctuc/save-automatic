@@ -1,9 +1,5 @@
 <template>
-  <span 
-    class="material-symbols-outlined" 
-    :class="{ [`icon-${size}`]: size }"
-    :style="{ color: color }"
-  >
+  <span class="material-symbols-outlined" :class="{ [`icon-${size}`]: size }" :style="{ color: color }">
     {{ name }}
   </span>
 </template>
