@@ -1,6 +1,6 @@
-# SCSS Design System
+# AKDB Design System
 
-Das SCSS Design System bietet zentrale Variablen und Helper-Funktionen für konsistente Gestaltung in der gesamten App.
+Das AKDB Design System bietet zentrale Design-Token und Helper-Funktionen für konsistente Gestaltung in der gesamten Anwendung.
 
 ## Struktur
 
@@ -78,16 +78,17 @@ Die globalen SCSS-Variablen sind automatisch in allen Vue-Komponenten verfügbar
 }
 ```
 
-## Legacy Support
+## Konsistente Nutzung
 
-Für bestehende Komponenten sind die alten Variablen weiterhin verfügbar:
+Das Design System verwendet ausschließlich Helper-Funktionen für maximale Konsistenz und bessere Wartbarkeit:
 
 ```scss
-// Diese funktionieren weiterhin
-$border-color
-$text-color
-$primary-blue
-$space-m
+// ✅ Empfohlen - Nutze immer die Helper-Funktionen
+.component {
+  color: get-color(text-primary);
+  margin: get-spacing(m);
+  border-radius: get-border-radius(base);
+}
 ```
 
 ## Erweiterung

@@ -44,14 +44,14 @@ export default {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: $background-gray;
-  padding: $space-m;
+  background-color: get-color(background-gray);
+  padding: get-spacing(m);
 }
 
 .logout-card {
   background: white;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
+  border: 1px solid get-color(border-base);
+  border-radius: get-border-radius(base);
   width: 320px;
   overflow: hidden;
   box-shadow: get-shadow(base);
@@ -59,12 +59,12 @@ export default {
 
 .logout-header {
   height: 110px;
-  border-bottom: 1px solid $border-light;
+  border-bottom: 1px solid get-color(border-light);
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
-  border-radius: $border-radius $border-radius 0 0;
+  border-radius: get-border-radius(base) get-border-radius(base) 0 0;
   overflow: hidden;
 }
 
@@ -85,7 +85,7 @@ export default {
 }
 
 .logout-content {
-  padding: $space-m get-spacing(lg);
+  padding: get-spacing(m) get-spacing(lg);
   display: flex;
   flex-direction: column;
   gap: get-spacing(lg);
@@ -96,12 +96,12 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: $space-m;
+  gap: get-spacing(m);
 
   .success-icon {
     color: get-color(success);
     font-size: 48px;
-    margin-bottom: $space-s;
+    margin-bottom: get-spacing(s);
     font-weight: bold;
   }
 
@@ -127,20 +127,20 @@ export default {
     font-size: get-font-size(sm);
     color: get-color(text-muted);
     font-style: italic;
-    margin-top: $space-s;
+    margin-top: get-spacing(s);
   }
 }
 
 .action-buttons {
   display: flex;
   flex-direction: column;
-  gap: $space-m;
+  gap: get-spacing(m);
   width: 100%;
 }
 
 %button-base {
   border: none;
-  border-radius: $border-radius;
+  border-radius: get-border-radius(base);
   height: 36px;
   font-family: $font-family-primary;
   font-size: get-font-size(base);
@@ -151,18 +151,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 $space-m;
+  padding: 0 get-spacing(m);
   box-sizing: border-box;
   transition: get-transition(base);
 }
 
 .btn-primary {
   @extend %button-base;
-  background: $primary-blue;
+  background: get-color(primary-light);
   color: white;
 
   &:hover:not(:disabled) {
-    background: $primary-blue-hover;
+    background: get-color(primary-hover);
   }
 
   &:disabled {

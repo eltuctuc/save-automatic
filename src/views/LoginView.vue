@@ -149,14 +149,14 @@ export default {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: $background-gray;
-  padding: $space-m;
+  background-color: get-color(background-gray);
+  padding: get-spacing(m);
 }
 
 .login-card {
   background: white;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
+  border: 1px solid get-color(border-base);
+  border-radius: get-border-radius(base);
   width: 288px;
   overflow: hidden;
   box-shadow: get-shadow(base);
@@ -164,12 +164,12 @@ export default {
 
 .login-header {
   height: 110px;
-  border-bottom: 1px solid $border-light;
+  border-bottom: 1px solid get-color(border-light);
   display: flex;
   align-items: center;
   justify-content: center;
   background: white;
-  border-radius: $border-radius $border-radius 0 0;
+  border-radius: get-border-radius(base) get-border-radius(base) 0 0;
   overflow: hidden;
 }
 
@@ -191,8 +191,8 @@ export default {
 
 .test-credentials {
   margin-top: get-spacing(lg);
-  padding-top: $space-m;
-  border-top: 1px solid $border-light;
+  padding-top: get-spacing(m);
+  border-top: 1px solid get-color(border-light);
 }
 
 .credentials-list {
@@ -208,7 +208,7 @@ export default {
   transition: get-transition(fast);
   display: flex;
   align-items: center;
-  gap: $space-s;
+  gap: get-spacing(s);
   font-family: 'Courier New', monospace;
   font-size: get-font-size(xs);
   color: get-color(text-muted);
@@ -234,16 +234,16 @@ export default {
 }
 
 .login-form {
-  padding: $space-m;
+  padding: get-spacing(m);
   display: flex;
   flex-direction: column;
-  gap: $space-m;
+  gap: get-spacing(m);
 }
 
 .form-field {
   display: flex;
   flex-direction: column;
-  gap: $space-s;
+  gap: get-spacing(s);
   align-items: flex-start;
   width: 256px;
 }
@@ -261,7 +261,7 @@ export default {
       font-size: get-font-size(base);
       font-weight: get-font-weight(regular);
       line-height: 24px;
-      color: $text-color;
+      color: get-color(text-secondary);
       white-space: nowrap;
       margin: 0;
     }
@@ -269,7 +269,7 @@ export default {
 }
 
 .required {
-  color: $required-color;
+  color: get-color(required);
 }
 
 .field-input {
@@ -278,10 +278,10 @@ export default {
   font-weight: get-font-weight(regular);
   line-height: 24px;
   padding: 5px 9px;
-  border: 1px solid $border-color;
-  border-radius: $border-radius;
+  border: 1px solid get-color(border-base);
+  border-radius: get-border-radius(base);
   background: white;
-  color: $input-text;
+  color: get-color(text-primary);
   height: 36px;
   box-sizing: border-box;
   width: 100%;
@@ -289,11 +289,11 @@ export default {
 
   &:focus {
     outline: none;
-    border-color: $primary-blue;
+    border-color: get-color(primary-light);
   }
 
   &.error {
-    border-color: $error-color;
+    border-color: get-color(error);
   }
 }
 
@@ -322,12 +322,12 @@ export default {
   transition: get-transition(fast);
 
   &:hover {
-    color: $input-text;
+    color: get-color(text-primary);
   }
 }
 
 .error-message {
-  color: $error-color;
+  color: get-color(error);
   font-size: get-font-size(sm);
   margin-top: -8px;
   margin-bottom: 8px;
@@ -336,14 +336,14 @@ export default {
 .button-group {
   display: flex;
   flex-direction: column;
-  gap: $space-m;
-  padding-top: $space-m;
+  gap: get-spacing(m);
+  padding-top: get-spacing(m);
   width: 100%;
 }
 
 %button-base {
   border: none;
-  border-radius: $border-radius;
+  border-radius: get-border-radius(base);
   height: 36px;
   font-family: $font-family-primary;
   font-size: get-font-size(base);
@@ -354,18 +354,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 $space-m;
+  padding: 0 get-spacing(m);
   box-sizing: border-box;
   transition: get-transition(base);
 }
 
 .btn-primary {
   @extend %button-base;
-  background: $primary-blue;
+  background: get-color(primary-light);
   color: white;
 
   &:hover:not(:disabled) {
-    background: $primary-blue-hover;
+    background: get-color(primary-hover);
   }
 
   &:disabled {
@@ -377,7 +377,7 @@ export default {
 .btn-secondary {
   @extend %button-base;
   background: transparent;
-  color: $secondary-blue;
+  color: get-color(required);
 
   &:hover {
     background: rgba(0, 89, 189, 0.05);
