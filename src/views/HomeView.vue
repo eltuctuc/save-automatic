@@ -5,6 +5,10 @@
       <p>Sie sind erfolgreich angemeldet.</p>
 
       <div class="navigation-links">
+        <router-link to="/dashboard" class="nav-button">
+          <MaterialIcon name="dashboard" size="small" />
+          Dashboard
+        </router-link>
         <router-link to="/about" class="nav-button">
           <MaterialIcon name="info" size="small" />
           Über die Anwendung
@@ -61,6 +65,10 @@ export default {
 
 .navigation-links {
   margin-top: get-spacing(lg);
+  display: flex;
+  gap: get-spacing(m);
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .nav-button {

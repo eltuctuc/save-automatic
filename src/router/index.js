@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import store from '../store';
 import AboutView from '../views/AboutView.vue';
+import DashboardView from '../views/DashboardView.vue';
 import HomeView from '../views/HomeView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
@@ -22,6 +23,12 @@ const routes = [
     path: '/',
     name: 'home',
     component: HomeView,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: DashboardView,
     meta: { requiresAuth: true },
   },
   {
