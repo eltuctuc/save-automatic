@@ -17,6 +17,12 @@ $colors: (
   text-secondary: rgba(0, 31, 66, 0.7),
   text-muted: rgba(0, 31, 66, 0.6),
   
+  // Icon Colors
+  icon-interactive: rgba(0, 31, 66, 0.61),
+  icon-interactive-hover: rgba(0, 31, 66, 0.9),
+  icon-interactive-active: #0059bd,
+  icon-interactive-disabled: rgba(0, 31, 66, 0.3),
+  
   // Border Colors
   border-base: rgba(0, 31, 66, 0.51),
   border-light: rgba(0, 31, 66, 0.2),
@@ -31,7 +37,9 @@ $colors: (
   // Background Colors
   background-gray: #f5f5f5,
   background-white: #ffffff,
-  background-overlay: rgba(0, 0, 0, 0.1)
+  background-overlay: rgba(0, 0, 0, 0.1),
+  background-interactive-hover: rgba(0, 31, 66, 0.05),
+  background-interactive-active: rgba(0, 31, 66, 0.1)
 );
 
 // Typography
@@ -74,6 +82,26 @@ $spacing: (
   xl: 32px,
   2xl: 48px,
   3xl: 64px
+);
+
+// Icon Button Sizes
+// ----------------------------------------
+$icon-button-sizes: (
+  small: (
+    size: 32px,
+    padding: 6px,
+    icon-size: 20px
+  ),
+  medium: (
+    size: 40px,
+    padding: 8px,
+    icon-size: 24px
+  ),
+  large: (
+    size: 48px,
+    padding: 10px,
+    icon-size: 28px
+  )
 );
 
 // Layout
@@ -146,4 +174,9 @@ $transitions: (
 
 @function get-transition($key) {
   @return map-get($transitions, $key);
+}
+
+@function get-icon-button-size($size, $property) {
+  $size-config: map-get($icon-button-sizes, $size);
+  @return map-get($size-config, $property);
 }

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" :class="{ 'authenticated': isAuthenticated, 'unauthenticated': !isAuthenticated }">
     <!-- AppHeader nur anzeigen wenn authentifiziert -->
     <AppHeader v-if="isAuthenticated" :app-title="headerTitle" :organization="headerOrganization" />
 
@@ -45,6 +45,15 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: get-color(text-primary);
   min-height: 100vh;
+
+  // Dynamische Hintergrundfarbe basierend auf Authentication-Status
+  &.authenticated {
+    background: get-color(background-white);
+  }
+
+  &.unauthenticated {
+    background: get-color(background-gray);
+  }
 }
 
 main {

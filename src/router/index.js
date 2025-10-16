@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import store from '../store';
 import AboutView from '../views/AboutView.vue';
+import ButtonShowcase from '../views/ButtonShowcase.vue';
+import DashboardView from '../views/DashboardView.vue';
 import HomeView from '../views/HomeView.vue';
 import LoginView from '../views/LoginView.vue';
 import LogoutView from '../views/LogoutView.vue';
@@ -25,9 +27,21 @@ const routes = [
     meta: { requiresAuth: true },
   },
   {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: DashboardView,
+    meta: { requiresAuth: true },
+  },
+  {
     path: '/about',
     name: 'about',
     component: AboutView,
+    meta: { requiresAuth: true },
+  },
+  {
+    path: '/buttons',
+    name: 'button-showcase',
+    component: ButtonShowcase,
     meta: { requiresAuth: true },
   },
 ];

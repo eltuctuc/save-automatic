@@ -14,7 +14,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: get-color(background-gray);
 }
 
 .content-area {
