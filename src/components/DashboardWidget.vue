@@ -58,12 +58,37 @@ export default {
 
 .widget-content {
   flex: 1;
-  padding: get-spacing(lg);
+  padding: get-spacing(lg) get-spacing(m) get-spacing(lg) get-spacing(lg); // Weniger Padding rechts wegen Scrollbar
   background: get-color(background-white);
   min-height: 240px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-height: 240px; // Feste maximale Höhe
+  overflow-y: auto; // Vertikales Scrollen aktivieren
+  overflow-x: hidden; // Horizontales Scrollen verhindern
+
+  // Custom Scrollbar Styling
+  &::-webkit-scrollbar {
+    width: 6px;
+    margin-left: get-spacing(s); // Etwas Abstand zur Scrollbar
+  }
+
+  &::-webkit-scrollbar-track {
+    background: get-color(background-gray);
+    border-radius: get-border-radius(base);
+    margin: get-spacing(s) 0; // Vertikaler Abstand oben/unten
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: get-color(border-base);
+    border-radius: get-border-radius(base);
+
+    &:hover {
+      background: get-color(text-muted);
+    }
+  }
+
+  // Firefox Scrollbar
+  scrollbar-width: thin;
+  scrollbar-color: get-color(border-base) get-color(background-gray);
 }
 
 .placeholder-content {
@@ -71,8 +96,7 @@ export default {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%;
-  min-height: 200px;
+  height: 200px; // Feste Höhe statt 100%
   background: get-color(background-gray);
   border-radius: get-border-radius(base);
   border: 2px dashed get-color(border-light);
